@@ -20,7 +20,12 @@ var src = 'template/src/',
 // Default task starts the server in the src folder (development)
 gulp.task('default', function(){
 	browserSync.init({
-		server: src + "/",
+        server: {
+            baseDir: [src, '.tmp'],
+            routes:  {
+                '/bower_components': 'bower_components'
+            }
+        },
 		browser: "Google Chrome Canary",
 		notify: false
 	});
@@ -53,6 +58,12 @@ gulp.task('prefix', () =>
         }))
         .pipe(gulp.dest(minsrc + 'css/'))
 );
+// Add bower componentes
+gulp.task('add-b', function() {
+    return gulp.src('./bower.json')
+        .pipe(mainBowerFiles())
+        .pipe(gulp.dest('./wwwroot/libs'));
+});
 // Concat all the js files
 gulp.task('concat-js', function() {
   return gulp.src(src + 'js/*.js')
@@ -100,9 +111,17 @@ gulp.task('f', ['less', 'concat-js', 'minify-js', 'minify-css', 'minify-html', '
 // Starts the server in the dist foler for testing
 gulp.task('check-dist', function() {
 	browserSync.init({
-		server: minsrc,
+        server: {
+            baseDir: [minsrc, '.tmp'],
+            routes:  {
+                '/bower_components': 'bower_components'
+            }
+        },
 		browser: "Google Chrome Canary",
-		notify: false
+		notify: false,
+        routes:{
+                    "../../bower_components" : "bower_components"
+                }
 	});
 
 	gulp.watch(src + "less/*.less", ['less']);
