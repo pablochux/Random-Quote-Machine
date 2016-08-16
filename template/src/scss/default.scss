@@ -1,0 +1,15 @@
+@import 'variables';
+
+//------------------------------
+// Default styles
+//------------------------------
+body{
+	transition: background-color 1s;
+	background-color: $main-bg-color;
+	font-family: 'Roboto';
+}
+
+p,
+i{
+	transition: color 1s;
+}

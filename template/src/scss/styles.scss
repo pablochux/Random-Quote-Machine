@@ -1,12 +1,15 @@
-*{
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-a{
-	text-decoration: none;
-	color: inherit;
-}
+//------------------------------
+// Imports
+//------------------------------
+@import 'reset';
+@import 'default';
+@import 'animations';
+@import 'variables';
+
+//------------------------------
+//
+//------------------------------
+
 body{
 	font-family: 'Roboto';
 	background-color: #B21212;

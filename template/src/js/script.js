@@ -1,3 +1,6 @@
+//------------------------------
+// Variables
+//------------------------------
 var randomQuotes = [
     {
         "text": "Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live.",
@@ -756,14 +759,11 @@ var randomQuotes = [
         "author": "Unknown"
     }
 ];
-
-
-// Main script
-
-// Vars
 var backgroundColors = ["#1abc9c", "#2ecc71", "#3498db", "#9b59b6", "#34495e", "#16a085", "#27ae60", "#2980b9", "#8e44ad", "#2c3e50", "#f1c40f", "#e67e22", "#e74c3c", "#95a5a6", "#f39c12", "#d35400", "#c0392b"];
 
-// Funcs
+//------------------------------
+// Functions
+//------------------------------
 // Gets a random color or a random quote, depending on the parameter
 function getTrueRandom(arr){
 	var randomNum = Math.round(Math.random() * arr.length - 2);
@@ -779,7 +779,7 @@ function getRandom(arr) {
 function setRandomQuote(quoteObj){
 	var quote = '<span class="quote-sign">"</span>';
 	$(".quote").html(quote + quoteObj.text + quote);
-	$(".quote-author").text("- " + quoteObj.author)
+	$(".quote-author").text("- " + quoteObj.author);
 	$(".twitter-link").attr('href', 'http://twitter.com/home/?status="' + quoteObj.text + "\" - " + quoteObj.author);
 }
 function setRandomColor(color) {
@@ -791,7 +791,9 @@ function main(randomQuotes, backgroundColors){
 	setRandomColor(getRandom(backgroundColors));
 }
 
-
+//------------------------------
+// Main Script
+//------------------------------
 $(document).ready(function(){
 	// Set inicial state (quote and background)
 	main(randomQuotes, backgroundColors);

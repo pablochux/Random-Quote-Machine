@@ -1,0 +1,14 @@
+.center {
+  text-align: center; }
+
+.margin-center {
+  margin: 0 auto; }
+
+.clear-fix {
+  clear: both; }
+
+.hide {
+  display: none; }
+
+.block {
+  display: block; }
