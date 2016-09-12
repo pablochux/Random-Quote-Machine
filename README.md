@@ -1,7 +1,7 @@
 # Random-Quote-Machine
 Random Quote Machine proyect for FreeCodeCamp
 
-Demo site is up at https://pablochux.github.io/Random-Quote-Machine/
+Demo site is up at https://pablochux.github.io/random-quote-machine/
 
 
 ![Random-Quote-Machine Screenshot](https://cloud.githubusercontent.com/assets/6568739/16858595/543010e8-4a28-11e6-93aa-16eb014ca99b.png)
